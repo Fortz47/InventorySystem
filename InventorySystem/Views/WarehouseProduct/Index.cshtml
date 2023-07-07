@@ -1,0 +1,28 @@
+﻿@model List<InventorySystem.Models.VMs.WarehouseProductVM>
+
+<div class="container">
+    <div class="row pt-3 pb-3">
+        <div class="col-6">
+            <h2>Warehouse Products</h2>
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Warehouse</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var warehouseProduct in Model)
+            {
+                <tr>
+                    <td>@warehouseProduct.ProductName</td>
+                    <td>@warehouseProduct.WarehouseName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,51 @@
+﻿@model List<InventorySystem.Models.VMs.ProductsVM>
+
+<div class="container">
+    <div class="row pt-3 pb-3">
+        <div class="col-6">
+            <h2>Products</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" asp-controller="Products" asp-action="Create">
+                Create New Product
+            </a>
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>MFD</th>
+                <th>Exp Date</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+                <tr>
+                    @*<td>@obj.products[0].ProductName</td>
+                    <td>@obj.products[0].MFD</td>
+                    <td>@obj.products[0].ExpDate</td>
+                    <td>@obj.CategoryName</td>*@
+                    <td> @obj.ProductName</td>
+                    <td> @obj.MFD</td>
+                    <td> @obj.ExpDate</td>
+                    <td> @obj.category.CategoryName</td>
+                    <td>
+                        <div class="w-75 btn-group role-group">
+                            <a asp-controller="Products" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                                Edit
+                            </a>
+                            <a asp-controller="Products" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,41 @@
+﻿@model List<InventorySystem.Models.VMs.StockInVM>
+
+<div class="container">
+    <div class="row pt-3 pb-3">
+        <div class="col-6">
+            <h2>Stock In</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" asp-controller="StockIn" asp-action="AddStock">
+                Add Stock
+            </a>
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity In</th>
+                <th>Date In</th>
+                <th>Entered By</th>
+                <th>Warehouse</th>
+                <th>Document No</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+                <tr>
+                    <td>@obj.ProductName</td>
+                    <td>@obj.QtyIn</td>
+                    <td>@obj.DateIn</td>
+                    <td>@obj.EnteredBy</td>
+                    <td>@obj.WarehouseName</td>
+                    <td>@obj.DocumentNo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

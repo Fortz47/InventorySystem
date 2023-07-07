@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row pt-3 pd-4">
+        <div class="col-3 m-1 btn btn-outline-secondary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Warehouse" asp-action="Index">WareHouse</a>
+        </div>
+        <div class="col-3 m-1 btn btn-outline-primary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+        </div>
+        <div class="col-3 m-1 btn btn-outline-secondary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+        </div>
+    </div>
+
+    <div class="row pt-3 pd-4">
+        <div class="col-3 m-1 btn btn-outline-primary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+        </div>
+        <div class="col-3 m-1 btn btn-outline-secondary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="WarehouseProduct" asp-action="Index">WareHouse Product</a>
+        </div>
+        <div class="col-3 m-1 btn btn-outline-primary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="StockIn" asp-action="Index">Stock In</a>
+        </div>
+    </div>
+
+    <div class="row pt-3 pb-4">
+        <div class="col-3 m-1 btn btn-outline-secondary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="StockMovement" asp-action="Index">Stock Movement</a>
+        </div>
+        <div class="col-3 m-1 btn btn-outline-primary align-content-center">
+            <a class="nav-link text-dark" asp-area="" asp-controller="StockLevel" asp-action="Index">Stock Level</a>
+        </div>
+    </div>
+
+</div>

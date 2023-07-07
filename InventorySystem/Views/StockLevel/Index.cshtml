@@ -1,0 +1,30 @@
+﻿@model List<InventorySystem.Models.VMs.StockLevelVM>
+
+<div class="container">
+    <div class="row pt-3 pb-3">
+        <div class="col-6">
+            <h2>Stock Level</h2>
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Quantity In Stock</th>
+                <th>Product</th>
+                <th>Warehouse</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+                <tr>
+                    <td>@obj.QtyInStock</td>
+                    <td>@obj.ProductName</td>
+                    <td>@obj.WarehouseName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

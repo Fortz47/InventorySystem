@@ -1,0 +1,51 @@
+﻿@model Products
+@{
+    var cat = ViewBag.Categories as List<Category>;
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Products</h2>
+            <hr />
+            <div class="mb-3 row p-1">
+                <label>Product Name</label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 row p-1">
+                <label>MFD</label>
+                <input asp-for="MFD" class="form-control" />
+                <span asp-validation-for="MFD" class="text-danger"></span>
+            </div>
+            <div class="mb-3 row p-1">
+                <label>Exp Date</label>
+                <input asp-for="ExpDate" class="form-control" />
+                <span asp-validation-for="ExpDate" class="text-danger"></span>
+            </div>
+            <div class="mb-3 row p-1">
+                <label>Category Id</label>
+                <select asp-for="CategoryId" class="form-control">
+                    <option value="">Select a Category</option>
+                    @if (cat != null)
+                    {
+                        @foreach (var category in cat)
+                        {
+                            <option value="@category.Id">@category.CategoryName</option>
+                        }
+                    }
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <button type="submit" class="btn btn-primary form-control">Update</button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a asp-controller="Products" asp-action="index" class="btn btn-outline-secondary form-control">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

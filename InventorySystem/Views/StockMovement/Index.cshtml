@@ -1,0 +1,41 @@
+﻿@model List<InventorySystem.Models.VMs.StockMovementVM>
+
+<div class="container">
+    <div class="row pt-3 pb-3">
+        <div class="col-6">
+            <h2>Stock Movement</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" asp-controller="StockMovement" asp-action="MoveStock">
+                Move Stock
+            </a>
+        </div>
+    </div>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Warehouse From/th>
+                <th>Warehouse To</th>
+                <th>Document No</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var obj in Model)
+            {
+                <tr>
+                    <td>@obj.ProductName</td>
+                    <td>@obj.Qty</td>
+                    <td>@obj.WarehouseFromName</td>
+                    <td>@obj.WarehouseToName</td>
+                    <td>@obj.DocumentNo</td>
+                    <td>@obj.Date</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
